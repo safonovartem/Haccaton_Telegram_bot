@@ -6,7 +6,7 @@ bot = telebot.TeleBot('6467932346:AAFtWURnHqqU9vHahdDYp5V0x7N_BZL5UIM')
 
 @bot.message_handler(commands=['start']) # Отслеживание команды Старт
 def start(message):
-    mess = f"Привет, <b>{message.from_user.first_name} {message.from_user.last_name}</b>"
+    mess = f"Здравствуйте, <b>{message.from_user.first_name} {message.from_user.last_name}</b>"
     if message.from_user.last_name == None:
         mess = f"Привет, <b>{message.from_user.first_name}</b>"
         bot.send_message(message.chat.id, mess, parse_mode="html") #html можно изменить
@@ -17,39 +17,41 @@ def start(message):
         mess = f"Привет, <b>{message.from_user.first_name} {message.from_user.last_name}</b>"
         bot.send_message(message.chat.id, mess, parse_mode="html")
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)  # Параметры: подстраиваться под размеры = Да, Сколько кнопок в ряде
-    website = types.KeyboardButton("/website")
     start = types.KeyboardButton("/start")
-    citys = types.KeyboardButton("/citys")
-    markup.add(website, start, citys)  # Текст Кнопки и адрес ссылки
-    bot.send_message(message.chat.id, "Здравствуйте. Этот бот поможет вам узнать актуальные мероприятия в вашем городе", reply_markup=markup)
-    bot.send_message(message.chat.id, "Вот список команд, которые вам доступны\n"
+    find = types.KeyboardButton("/find")
+    complain = types.KeyboardButton("/complain")
+    markup.add(start, find, complain)  # Текст Кнопки и адрес ссылки
+    bot.send_message(message.chat.id, "Здравстуйте, добро пожаловать в нашу компанию, я бот созданный, чтобы помочь вам безболезнено влиться в новый коллектив", reply_markup=markup) # проверить на грамматику и подумать над изменением фразы
+    bot.send_message(message.chat.id, "Что вы хотите сделать?\n"
                                       "/start - Активировать бота\n"
-                                      "/website - Ссылка на официальный сайт Афиши\n"
-                                      "/citys - Команда для выбора вашего города", reply_markup=markup)
+                                      "/find - Найти то, что вам нужно\n"
+                                      "/complain - Пожаловаться на работу бота или сотрудников нашей компании", reply_markup=markup)
     bot.send_message(message.chat.id, "Выберите команду", reply_markup=markup)
 
-@bot.message_handler(commands = ['website'])
-def website(message):
+@bot.message_handler(commands = ['find'])
+def find(message):
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)  # Параметры: подстраиваться под размеры = Да, Сколько кнопок в ряде
+    Office = types.KeyboardButton("/office")
+    Collaborator = types.KeyboardButton("/collaborator")
+    Departments = types.KeyboardButton("/departments")
+    Another = types.KeyboardButton("/another")
+    markup.add(Office, Collaborator, Departments, Another)  # Текст Кнопки и адрес ссылки
+    bot.send_message(message.chat.id, "Что вы хотите найти?", reply_markup=markup)
+
+@bot.message_handler(commands = ['office'])
+def office(message):
     markup = types.InlineKeyboardMarkup()
-    markup.add(types.InlineKeyboardButton("Посетить сайт Афиши", url ="https://www.afisha.ru"))#Текст Кнопки и адрес ссылки
-    bot.send_message(message.chat.id, "Официальнный сайт Афиши", reply_markup=markup)
+    markup.add(types.InlineKeyboardButton("Посмотреть на карте", url="https://maps.app.goo.gl/QYLcJXSfnLMLdiks9"))  # Текст Кнопки и адрес ссылки
+    URL = "https://www.afisha.ru/tver/events/movies/"
 
-@bot.message_handler(commands = ['citys'])
-def website(message):
+@bot.message_handler(commands = ['complain'])
+def complain(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width= 2)#Параметры: подстраиваться под размеры = Да, Сколько кнопок в ряде
-    Tver = types.KeyboardButton("/Tver")
-    Moscow = types.KeyboardButton("/Moscow")
-    Saint_Petersburg = types.KeyboardButton("/Saint_Petersburg")
-    markup.add(Tver, Moscow, Saint_Petersburg)#Текст Кнопки и адрес ссылки
-    bot.send_message(message.chat.id, "Выберите свой город", reply_markup=markup)
-
-@bot.message_handler(commands = ['Tver'])
-def tver_city(message):
-    markup = types.ReplyKeyboardMarkup(resize_keyboard=True,row_width=2)  # Параметры: подстраиваться под размеры = Да, Сколько кнопок в ряде
-    Movie = types.KeyboardButton("/Films_in_Tver")
-    Concerts = types.KeyboardButton("/Сoncerts_in_Tver")
-    markup.add(Movie, Concerts)  # Текст Кнопки и адрес ссылки
-    bot.send_message(message.chat.id, "Отлично, теперь выберите какой тип мероприятий вас интересует", reply_markup=markup)
+    Collaborator = types.KeyboardButton("/Collaborator")
+    Bot = types.KeyboardButton("/Bot")
+    Company_management = types.KeyboardButton("/Сompany_management")
+    markup.add(Collaborator, Bot, Company_management)#Текст Кнопки и адрес ссылки
+    bot.send_message(message.chat.id, "На что вы хотите пожаловаться?", reply_markup=markup)
 
 @bot.message_handler(commands= ['Films_in_Tver'])
 def films_in_tver(message):
