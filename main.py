@@ -112,9 +112,8 @@ def media(message):
 def complain(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width= 2)#Параметры: подстраиваться под размеры = Да, Сколько кнопок в ряде
     Colleagues = types.KeyboardButton("/сolleagues")
-    Bot = types.KeyboardButton("/bot")
     Company_management = types.KeyboardButton("/company_management")
-    markup.add(Colleagues, Bot, Company_management)#Текст Кнопки и адрес ссылки
+    markup.add(Colleagues, Company_management)#Текст Кнопки и адрес ссылки
     bot.send_message(message.chat.id, "На кого вы хотите пожаловаться?", reply_markup=markup)
 
 @bot.message_handler(commands = ['сolleagues'])
@@ -128,14 +127,23 @@ def сolleagues(message):
 
 @bot.message_handler(commands = ['bulling'])
 def bulling(message):
-    bot.send_message(message.chat.id, "Спасибо что сообщили нам об этом, мы немедленно примем меры", parse_mode='html')
+    bot.send_message(message.chat.id, "Спасибо что сообщили нам об этом, мы немедленно примем меры. Также советуем обратиться в полицию по телефону доверия 8 (4822) 32-95-52.", parse_mode='html')
 
 @bot.message_handler(commands = ['harassment'])
-def bulling(message):
-    bot.send_message(message.chat.id, "Спасибо что сообщили нам об этом, мы немедленно примем меры", parse_mode='html')
+def harassment(message):
+    bot.send_message(message.chat.id, "Спасибо что сообщили нам об этом, мы немедленно примем меры. Также советуем обратиться в полицию по телефону доверия 8 (4822) 32-95-52.", parse_mode='html')
 
 @bot.message_handler(commands = ['another'])
-def bulling(message):
-    bot.send_message(message.chat.id, "Вы можете написать нам на почту: info@kvantorium69.ru или позвонить по телефону 84822416103", parse_mode='html')
+def another(message):
+    bot.send_message(message.chat.id, "Вы можете написать нам на почту: info@kvantorium69.ru или позвонить по телефону 84822416103, а также советуем обратиться в полицию по телефону доверия 8 (4822) 32-95-52.", parse_mode='html')
+
+@bot.message_handler(commands = ['company_management'])
+def сolleagues(message):
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width= 2)#Параметры: подстраиваться под размеры = Да, Сколько кнопок в ряде
+    Bulling = types.KeyboardButton("/bulling")
+    Harassment = types.KeyboardButton("/harassment")
+    Another = types.KeyboardButton("/another")
+    markup.add(Bulling, Harassment, Another)#Текст Кнопки и адрес ссылки
+    bot.send_message(message.chat.id, "Укажите причину", reply_markup=markup)
 
 bot.polling(none_stop=True)
