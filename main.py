@@ -118,12 +118,24 @@ def complain(message):
     bot.send_message(message.chat.id, "На кого вы хотите пожаловаться?", reply_markup=markup)
 
 @bot.message_handler(commands = ['сolleagues'])
-def collaborator(message):
+def сolleagues(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width= 2)#Параметры: подстраиваться под размеры = Да, Сколько кнопок в ряде
     Bulling = types.KeyboardButton("/bulling")
     Harassment = types.KeyboardButton("/harassment")
     Another = types.KeyboardButton("/another")
     markup.add(Bulling, Harassment, Another)#Текст Кнопки и адрес ссылки
     bot.send_message(message.chat.id, "Укажите причину", reply_markup=markup)
+
+@bot.message_handler(commands = ['bulling'])
+def bulling(message):
+    bot.send_message(message.chat.id, "Спасибо что сообщили нам об этом, мы немедленно примем меры", parse_mode='html')
+
+@bot.message_handler(commands = ['harassment'])
+def bulling(message):
+    bot.send_message(message.chat.id, "Спасибо что сообщили нам об этом, мы немедленно примем меры", parse_mode='html')
+
+@bot.message_handler(commands = ['another'])
+def bulling(message):
+    bot.send_message(message.chat.id, "Вы можете написать нам на почту: info@kvantorium69.ru или позвонить по телефону 84822416103", parse_mode='html')
 
 bot.polling(none_stop=True)
