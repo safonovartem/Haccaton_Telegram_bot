@@ -59,7 +59,9 @@ def departments(message):
     Aeroquantum = types.KeyboardButton("/aeroquantum")
     Promrobokvantum = types.KeyboardButton("/promrobokvantum")
     Industrial_design = types.KeyboardButton("/industrial_design")
-    markup.add(IT, VR_AR, Aeroquantum, Promrobokvantum, Industrial_design)
+    High_tech = types.KeyboardButton("/high_tech")
+    Media = types.KeyboardButton("/media")
+    markup.add(IT, VR_AR, Aeroquantum, Promrobokvantum, Industrial_design, High_tech, Media)
     bot.send_message(message.chat.id, "Какой отдел вам нужен?", reply_markup=markup)
 
 @bot.message_handler(commands=['it'])
