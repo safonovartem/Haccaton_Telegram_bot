@@ -25,7 +25,7 @@ def start(message):
     bot.send_message(message.chat.id, "Что вы хотите сделать?\n"
                                       "/start - Активировать бота\n"
                                       "/find - Найти то, что вам нужно\n"
-                                      "/complain - Пожаловаться на работу бота или сотрудников", reply_markup=markup)
+                                      "/complain - Пожаловаться на сотрудника или начальника нашей компании", reply_markup=markup)
     bot.send_message(message.chat.id, "Выберите команду", reply_markup=markup)
 
 @bot.message_handler(commands = ['find'])
@@ -34,7 +34,7 @@ def find(message):
     Office = types.KeyboardButton("/office")
     Collaborator = types.KeyboardButton("/collaborator")
     Departments = types.KeyboardButton("/departments")
-    Another = types.KeyboardButton("/another")
+    Another = types.KeyboardButton("/WC")
     markup.add(Office, Collaborator, Departments, Another)  # Текст Кнопки и адрес ссылки
     bot.send_message(message.chat.id, "Что вы хотите найти?", reply_markup=markup)
 
@@ -107,6 +107,10 @@ def media(message):
     markup.add(types.InlineKeyboardButton("Узнать подробнее",
                                           url="https://kvantorium69.ru/media/"))  # Текст Кнопки и адрес ссылки
     bot.send_message(message.chat.id, "Медиа", reply_markup=markup)
+
+@bot.message_handler(commands = ['WC'])
+def another(message):
+    bot.send_message(message.chat.id, "Туалеты находятся на 1, 2 и 3 этаже рядом со входом на этот этаж ", parse_mode='html')
 
 @bot.message_handler(commands = ['complain'])
 def complain(message):
