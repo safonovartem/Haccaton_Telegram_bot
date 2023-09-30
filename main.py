@@ -67,50 +67,46 @@ def departments(message):
 @bot.message_handler(commands=['it'])
 def it(message):
     markup = types.InlineKeyboardMarkup()
-    bot.send_message(message.chat.id, "IT", reply_markup=markup)
     markup.add(types.InlineKeyboardButton("Узнать подробнее", url="https://kvantorium69.ru/it-%d0%ba%d0%b2%d0%b0%d0%bd%d1%82%d1%83%d0%bc/"))  # Текст Кнопки и адрес ссылки
-
+    bot.send_message(message.chat.id, "IT", reply_markup=markup)
 @bot.message_handler(commands=['vr_ar'])
 def vr_ar(message):
     markup = types.InlineKeyboardMarkup()
-    bot.send_message(message.chat.id, "VR/AR", reply_markup=markup)
     markup.add(types.InlineKeyboardButton("Узнать подробнее",
                                           url="https://kvantorium69.ru/vr-ar/"))  # Текст Кнопки и адрес ссылки
-
+    bot.send_message(message.chat.id, "VR/AR", reply_markup=markup)
 @bot.message_handler(commands=['aeroquantum'])
 def aeroquantum(message):
     markup = types.InlineKeyboardMarkup()
-    bot.send_message(message.chat.id, "Аэроквантум", reply_markup=markup)
     markup.add(types.InlineKeyboardButton("Узнать подробнее",
                                           url="https://kvantorium69.ru/%d0%b0%d1%8d%d1%80%d0%be%d0%ba%d0%b2%d0%b0%d0%bd%d1%82%d1%83%d0%bc/"))  # Текст Кнопки и адрес ссылки
-
+    bot.send_message(message.chat.id, "Аэроквантум", reply_markup=markup)
 @bot.message_handler(commands=['promrobokvantum'])
 def promrobokvantum(message):
     markup = types.InlineKeyboardMarkup()
-    bot.send_message(message.chat.id, "Промробоквантум", reply_markup=markup)
     markup.add(types.InlineKeyboardButton("Узнать подробнее",
                                           url="https://kvantorium69.ru/%d0%bf%d1%80%d0%be%d0%bc%d1%80%d0%be%d0%b1%d0%be%d0%ba%d0%b2%d0%b0%d0%bd%d1%82%d1%83%d0%bc/"))  # Текст Кнопки и адрес ссылки
-
+    bot.send_message(message.chat.id, "Промробоквантум", reply_markup=markup)
 @bot.message_handler(commands=['industrial_design'])
 def id(message):
     markup = types.InlineKeyboardMarkup()
-    bot.send_message(message.chat.id, "Промышленный дизайн", reply_markup=markup)
     markup.add(types.InlineKeyboardButton("Узнать подробнее",
                                           url="https://kvantorium69.ru/%d0%bf%d1%80%d0%be%d0%bc%d1%8b%d1%88%d0%bb%d0%b5%d0%bd%d0%bd%d1%8b%d0%b9-%d0%b4%d0%b8%d0%b7%d0%b0%d0%b9%d0%bd/"))  # Текст Кнопки и адрес ссылки
+    bot.send_message(message.chat.id, "Промышленный дизайн", reply_markup=markup)
 
 @bot.message_handler(commands=['high_tech'])
 def high_tech(message):
     markup = types.InlineKeyboardMarkup()
-    bot.send_message(message.chat.id, "Хайтек", reply_markup=markup)
     markup.add(types.InlineKeyboardButton("Узнать подробнее",
                                           url="https://kvantorium69.ru/%d1%85%d0%b0%d0%b9-%d1%82%d0%b5%d0%ba/"))  # Текст Кнопки и адрес ссылки
+    bot.send_message(message.chat.id, "Хайтек", reply_markup=markup)
 
 @bot.message_handler(commands=['media'])
 def media(message):
     markup = types.InlineKeyboardMarkup()
-    bot.send_message(message.chat.id, "Медиа", reply_markup=markup)
     markup.add(types.InlineKeyboardButton("Узнать подробнее",
                                           url="https://kvantorium69.ru/media/"))  # Текст Кнопки и адрес ссылки
+    bot.send_message(message.chat.id, "Медиа", reply_markup=markup)
 
 @bot.message_handler(commands = ['complain'])
 def complain(message):
