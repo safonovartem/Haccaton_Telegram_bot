@@ -112,9 +112,18 @@ def media(message):
 def complain(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width= 2)#Параметры: подстраиваться под размеры = Да, Сколько кнопок в ряде
     Collaborator = types.KeyboardButton("/collaborator")
-    Bot = types.KeyboardButton("/cot")
+    Bot = types.KeyboardButton("/bot")
     Company_management = types.KeyboardButton("/company_management")
     markup.add(Collaborator, Bot, Company_management)#Текст Кнопки и адрес ссылки
-    bot.send_message(message.chat.id, "На что вы хотите пожаловаться?", reply_markup=markup)
+    bot.send_message(message.chat.id, "На кого вы хотите пожаловаться?", reply_markup=markup)
+
+@bot.message_handler(commands = ['collaborator'])
+def collaborator(message):
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width= 2)#Параметры: подстраиваться под размеры = Да, Сколько кнопок в ряде
+    Bulling = types.KeyboardButton("/bulling")
+    Harassment = types.KeyboardButton("/harassment")
+    Another = types.KeyboardButton("/another")
+    markup.add(Bulling, Harassment, Another)#Текст Кнопки и адрес ссылки
+    bot.send_message(message.chat.id, "Укажите причину", reply_markup=markup)
 
 bot.polling(none_stop=True)
