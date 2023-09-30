@@ -111,13 +111,13 @@ def media(message):
 @bot.message_handler(commands = ['complain'])
 def complain(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width= 2)#Параметры: подстраиваться под размеры = Да, Сколько кнопок в ряде
-    Collaborator = types.KeyboardButton("/collaborator")
+    Colleagues = types.KeyboardButton("/сolleagues")
     Bot = types.KeyboardButton("/bot")
     Company_management = types.KeyboardButton("/company_management")
-    markup.add(Collaborator, Bot, Company_management)#Текст Кнопки и адрес ссылки
+    markup.add(Colleagues, Bot, Company_management)#Текст Кнопки и адрес ссылки
     bot.send_message(message.chat.id, "На кого вы хотите пожаловаться?", reply_markup=markup)
 
-@bot.message_handler(commands = ['collaborator'])
+@bot.message_handler(commands = ['сolleagues'])
 def collaborator(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width= 2)#Параметры: подстраиваться под размеры = Да, Сколько кнопок в ряде
     Bulling = types.KeyboardButton("/bulling")
