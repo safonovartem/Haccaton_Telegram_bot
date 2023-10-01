@@ -137,6 +137,21 @@ def laboratory_energy(message):
                                           url="https://kvantorium69.ru/energy-lab/"))  # Текст Кнопки и адрес ссылки
     bot.send_message(message.chat.id, "Лаборатория Энерджи находится на третьем этаже в коридоре, третий справа кабинет", reply_markup=markup)
 
+@bot.message_handler(commands=['mathematics'])
+def mathematics(message):
+    markup = types.InlineKeyboardMarkup()
+    markup.add(types.InlineKeyboardButton("Узнать подробнее",
+                                          url="https://kvantorium69.ru/%d0%bc%d0%b0%d1%82%d0%b5%d0%bc%d0%b0%d1%82%d0%b8%d0%ba%d0%b0/"))  # Текст Кнопки и адрес ссылки
+    bot.send_message(message.chat.id, "Математика находится на первом этаже в коридоре, третий справа кабинет", reply_markup=markup)
+
+@bot.message_handler(commands=['english'])
+def english(message):
+    markup = types.InlineKeyboardMarkup()
+    markup.add(types.InlineKeyboardButton("Узнать подробнее",
+                                          url="https://kvantorium69.ru/%d0%b0%d0%bd%d0%b3%d0%bb%d0%b8%d0%b9%d1%81%d0%ba%d0%b8%d0%b9-%d1%8f%d0%b7%d1%8b%d0%ba/"))  # Текст Кнопки и адрес ссылки
+    bot.send_message(message.chat.id, "Английский находится на первом этаже в коридоре, третий справа кабинет", reply_markup=markup)
+
+
 @bot.message_handler(commands = ['WC'])
 def another(message):
     bot.send_message(message.chat.id, "Туалеты находятся на 1, 2 и 3 этаже рядом со входом на этот этаж ", parse_mode='html')
