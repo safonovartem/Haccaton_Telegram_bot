@@ -56,8 +56,8 @@ def departments(message):
                                        row_width=2)  # Параметры: подстраиваться под размеры = Да, Сколько кнопок в ряде
     IT = types.KeyboardButton("/it")
     VR_AR = types.KeyboardButton("/vr_ar")
-    Aeroquantum = types.KeyboardButton("/aeroquantum")
-    Promrobokvantum = types.KeyboardButton("/promrobokvantum")
+    Aeroquantum = types.KeyboardButton("/aero_kvantum")
+    Promrobokvantum = types.KeyboardButton("/promrobo_kvantum")
     Industrial_design = types.KeyboardButton("/industrial_design")
     High_tech = types.KeyboardButton("/high_tech")
     Media = types.KeyboardButton("/media")
