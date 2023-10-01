@@ -21,7 +21,7 @@ def start(message):
     find = types.KeyboardButton("/find")
     complain = types.KeyboardButton("/complain")
     markup.add(start, find, complain)  # Текст Кнопки и адрес ссылки
-    bot.send_message(message.chat.id, "Здравствуйте, добро пожаловать в нашу компанию. Я создан для того, чтобы помочь вам безболезнено влиться в наш дружный коллектив", reply_markup=markup) # проверить на грамматику и подумать над изменением фразы
+    bot.send_message(message.chat.id, "Здравствуйте, добро пожаловать в нашу компанию. Я создан для того, чтобы помочь вам безболезненно влиться в наш дружный коллектив", reply_markup=markup) # проверить на грамматику и подумать над изменением фразы
     bot.send_message(message.chat.id, "Что вы хотите сделать?\n"
                                       "/start - Активировать бота\n"
                                       "/find - Найти то, что вам нужно\n"
@@ -61,7 +61,8 @@ def departments(message):
     Industrial_design = types.KeyboardButton("/industrial_design")
     High_tech = types.KeyboardButton("/high_tech")
     Media = types.KeyboardButton("/media")
-    markup.add(IT, VR_AR, Aeroquantum, Promrobokvantum, Industrial_design, High_tech, Media)
+    Kvantum_chess = types.KeyboardButton("/kvantum_chess")
+    markup.add(IT, VR_AR, Aeroquantum, Promrobokvantum, Industrial_design, High_tech, Media, Kvantum_chess)
     bot.send_message(message.chat.id, "Какой отдел вам нужен?", reply_markup=markup)
 
 @bot.message_handler(commands=['it'])
