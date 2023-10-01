@@ -110,18 +110,32 @@ def media(message):
     bot.send_message(message.chat.id, "Обычно занятия у Медиа проходят в конферен зале, но лучше уточнить на ресепшне", reply_markup=markup)
 
 @bot.message_handler(commands=['kvantum_chess'])
-def media(message):
+def kvantum_chess(message):
     markup = types.InlineKeyboardMarkup()
     markup.add(types.InlineKeyboardButton("Узнать подробнее",
                                           url="https://kvantorium69.ru/%d1%88%d0%b0%d1%85%d0%bc%d0%b0%d1%82%d1%8b/"))  # Текст Кнопки и адрес ссылки
     bot.send_message(message.chat.id, "Шахматы находится на первом этаже в коридоре, третий справа кабинет", reply_markup=markup)
 
-@bot.message_handler(commands=['kvantum_chess'])
-def media(message):
+@bot.message_handler(commands=['laboratory_bio'])
+def laboratory_bio(message):
     markup = types.InlineKeyboardMarkup()
     markup.add(types.InlineKeyboardButton("Узнать подробнее",
-                                          url="https://kvantorium69.ru/%d1%88%d0%b0%d1%85%d0%bc%d0%b0%d1%82%d1%8b/"))  # Текст Кнопки и адрес ссылки
-    bot.send_message(message.chat.id, "Шахматы находится на первом этаже в коридоре, третий справа кабинет", reply_markup=markup)
+                                          url="https://kvantorium69.ru/bio-lab/"))  # Текст Кнопки и адрес ссылки
+    bot.send_message(message.chat.id, "Лаборатория Био находится на третьем этаже в коридоре, первый слева кабинет", reply_markup=markup)
+
+@bot.message_handler(commands=['laboratory_auto'])
+def laboratory_auto(message):
+    markup = types.InlineKeyboardMarkup()
+    markup.add(types.InlineKeyboardButton("Узнать подробнее",
+                                          url="https://kvantorium69.ru/auto-lab/"))  # Текст Кнопки и адрес ссылки
+    bot.send_message(message.chat.id, "Лаборатория Авто находится на третьем этаже в коридоре, первый справа кабинет", reply_markup=markup)
+
+@bot.message_handler(commands=['laboratory_energy'])
+def laboratory_energy(message):
+    markup = types.InlineKeyboardMarkup()
+    markup.add(types.InlineKeyboardButton("Узнать подробнее",
+                                          url="https://kvantorium69.ru/energy-lab/"))  # Текст Кнопки и адрес ссылки
+    bot.send_message(message.chat.id, "Лаборатория Энерджи находится на третьем этаже в коридоре, третий справа кабинет", reply_markup=markup)
 
 @bot.message_handler(commands = ['WC'])
 def another(message):
