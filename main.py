@@ -21,7 +21,7 @@ def start(message):
     find = types.KeyboardButton("/find")
     complain = types.KeyboardButton("/complain")
     markup.add(start, find, complain)  # Текст Кнопки и адрес ссылки
-    bot.send_message(message.chat.id, "Здравстуйте, добро пожаловать в нашу компанию, я бот созданный, чтобы помочь вам безболезнено влиться в новый коллектив", reply_markup=markup) # проверить на грамматику и подумать над изменением фразы
+    bot.send_message(message.chat.id, "Здравствуйте, добро пожаловать в нашу компанию. Я создан для того, чтобы помочь вам безболезнено влиться в наш дружный коллектив", reply_markup=markup) # проверить на грамматику и подумать над изменением фразы
     bot.send_message(message.chat.id, "Что вы хотите сделать?\n"
                                       "/start - Активировать бота\n"
                                       "/find - Найти то, что вам нужно\n"
