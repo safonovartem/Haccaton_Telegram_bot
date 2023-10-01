@@ -62,7 +62,12 @@ def departments(message):
     High_tech = types.KeyboardButton("/high_tech")
     Media = types.KeyboardButton("/media")
     Kvantum_chess = types.KeyboardButton("/kvantum_chess")
-    markup.add(IT, VR_AR, Aeroquantum, Promrobokvantum, Industrial_design, High_tech, Media, Kvantum_chess)
+    Laboratory_bio = types.KeyboardButton("/laboratory_bio")
+    Laboratory_auto = types.KeyboardButton("/laboratory_auto")
+    Laboratory_energy = types.KeyboardButton("/laboratory_energy")
+    Math = types.KeyboardButton("/mathematics")
+    English = types.KeyboardButton("/english")
+    markup.add(IT, VR_AR, Aeroquantum, Promrobokvantum, Industrial_design, High_tech, Media, Kvantum_chess, Laboratory_bio, Laboratory_auto, Laboratory_energy, Math, English)
     bot.send_message(message.chat.id, "Какой отдел вам нужен?", reply_markup=markup)
 
 @bot.message_handler(commands=['it'])
