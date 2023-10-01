@@ -37,6 +37,12 @@ def find(message):
     Another = types.KeyboardButton("/WC")
     markup.add(Office, Collaborator, Departments, Another)  # Текст Кнопки и адрес ссылки
     bot.send_message(message.chat.id, "Что вы хотите найти?", reply_markup=markup)
+    bot.send_message(message.chat.id, "/office - Офис компании\n"
+                                      "/collaborator - Список сотрудников\n"
+                                      "/departments - Наши направления\n"
+                                      "/WC - Туалеты в офисе",
+
+                     reply_markup=markup)
 
 @bot.message_handler(commands = ['office'])
 def office(message):
