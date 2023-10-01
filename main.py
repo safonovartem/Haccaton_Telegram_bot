@@ -180,7 +180,7 @@ def complain(message):
 
 
 @bot.message_handler(commands = ['сolleagues'])
-def сolleagues(message):
+def colleagues(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width= 2)#Параметры: подстраиваться под размеры = Да, Сколько кнопок в ряде
     Bulling = types.KeyboardButton("/bulling")
     Harassment = types.KeyboardButton("/harassment")
