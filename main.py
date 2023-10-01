@@ -174,6 +174,10 @@ def complain(message):
     Company_management = types.KeyboardButton("/company_management")
     markup.add(Colleagues, Company_management)#Текст Кнопки и адрес ссылки
     bot.send_message(message.chat.id, "На кого вы хотите пожаловаться?", reply_markup=markup)
+    bot.send_message(message.chat.id, "/сolleagues - На сотрудника\n"
+                                      "/company_management - На начальника/руководителя\n",
+                     reply_markup=markup)
+
 
 @bot.message_handler(commands = ['сolleagues'])
 def сolleagues(message):
